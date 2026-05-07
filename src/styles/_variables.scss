@@ -1,0 +1,175 @@
+// ---------- COULEURS ----------
+$white: #ffffff;
+$black: #000000;
+
+$lochmara-25: #f7fcff;
+$lochmara-50: #eff8ff;
+$lochmara-100: #def0ff;
+$lochmara-200: #b6e2ff;
+$lochmara-300: #76cbff;
+$lochmara-400: #2db2ff;
+$lochmara-500: #0299f5;
+$lochmara-600: #0078d2;
+$lochmara-700: #0060aa;
+$lochmara-800: #00508a;
+$lochmara-900: #074373;
+$lochmara-950: #042b4d;
+$lochmara-1000: #021e3a;
+
+$glacier-25: #f9fbfc;
+$glacier-50: #f1f8fa;
+$glacier-100: #dcedf1;
+$glacier-200: #bddde4;
+$glacier-300: #74b6c6;
+$glacier-400: #5aa3b6;
+$glacier-500: #3e879c;
+$glacier-600: #376f83;
+$glacier-700: #325b6c;
+$glacier-800: #2f4d5b;
+$glacier-900: #2b414e;
+$glacier-950: #182a34;
+$glacier-1000: #0d1b22;
+
+$neutral-25: #fefefe;
+$neutral-50: #fafafa;
+$neutral-100: #f5f5f5;
+$neutral-200: #e5e5e5;
+$neutral-300: #d4d4d4;
+$neutral-400: #a1a1a1;
+$neutral-500: #737373;
+$neutral-600: #525252;
+$neutral-700: #404040;
+$neutral-800: #262626;
+$neutral-900: #171717;
+$neutral-950: #0a0a0a;
+$neutral-1000: #050505;
+
+$green-50: #f0fdf4;
+$green-100: #dcfce7;
+$green-200: #b9f8cf;
+$green-300: #7bf1a8;
+$green-400: #05df72;
+$green-500: #00c950;
+$green-600: #00a63e;
+$green-700: #008236;
+$green-800: #016630;
+$green-900: #0d542b;
+$green-950: #032e15;
+$green-1000: #011a0b;
+
+$red-50: #fef2f2;
+$red-100: #ffe2e2;
+$red-200: #ffc9c9;
+$red-300: #ffa2a2;
+$red-400: #ff6467;
+$red-500: #fb2c36;
+$red-600: #e7000b;
+$red-700: #c10007;
+$red-800: #9f0712;
+$red-900: #82181a;
+$red-950: #460809;
+$red-1000: #2b0405;
+
+$orange-50: #fff7ed;
+$orange-100: #ffedd4;
+$orange-200: #ffd6a7;
+$orange-300: #ffb86a;
+$orange-400: #ff8904;
+$orange-500: #ff6900;
+$orange-600: #f54900;
+$orange-700: #ca3500;
+$orange-800: #9f2d00;
+$orange-900: #7e2a0c;
+$orange-950: #441306;
+$orange-1000: #2a0a02;
+
+$purple-50: #faf5ff;
+$purple-100: #f3e8ff;
+$purple-200: #e9d4ff;
+$purple-300: #dab2ff;
+$purple-400: #c27aff;
+$purple-500: #ad46ff;
+$purple-600: #9810fa;
+$purple-700: #8200db;
+$purple-800: #6e11b0;
+$purple-900: #59168b;
+$purple-950: #3c0366;
+
+$tooltip-50: #444444e6;
+$tooltip-100: #444444cc;
+$tooltip-200: #44444499;
+$tooltip-300: #44444466;
+$tooltip-400: #44444433;
+$tooltip-500: #4444441a;
+$tooltip-600: #4444440d;
+$tooltip-700: #44444405;
+$tooltip-800: #44444402;
+$tooltip-900: #44444401;
+
+// ---------- BREAKPOINTS ----------
+$breakpoints: (
+    xs: 320px,
+    sm: 640px,
+    md: 768px,
+    lg: 1024px,
+    xl: 1280px,
+    xxl: 1536px,
+);
+
+// ---------- TYPOGRAPHIE ----------
+$font-family-heading: "DM Sans", sans-serif;
+$font-family-base: "Manrope", sans-serif;
+$font-family-mono: "Fira Code", "Courier New", monospace;
+
+// ---------- DIMENSIONS ----------
+$navbar-height: 68px;
+
+// ---------- ACCESSIBILITÉ ----------
+@mixin sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+// ---------- RESPONSIVE MIXINS ----------
+@mixin xs {
+    @media (max-width: 320px) {
+        @content;
+    }
+}
+
+@mixin sm {
+    @media (max-width: 640px) {
+        @content;
+    }
+}
+
+@mixin md {
+    @media (max-width: 768px) {
+        @content;
+    }
+}
+
+@mixin lg {
+    @media (max-width: 1024px) {
+        @content;
+    }
+}
+
+@mixin xl {
+    @media (max-width: 1280px) {
+        @content;
+    }
+}
+
+@mixin xxl {
+    @media (max-width: 1536px) {
+        @content;
+    }
+}
