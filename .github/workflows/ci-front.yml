@@ -2,7 +2,6 @@ name: CI — Frontend React
 
 on:
   push:
-    branches: [main, develop]
     paths:
       - "src/**"
       - "*.json"
