@@ -1,7 +1,6 @@
 use crate::core::ADatabase;
 use tokio::sync::Mutex;
 
-// On crée une structure pour stocker la connexion active
 pub struct AppState {
     pub db: Mutex<Option<Box<dyn ADatabase + Send + Sync>>>,
 }
