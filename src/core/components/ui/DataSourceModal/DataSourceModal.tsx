@@ -2,7 +2,7 @@ import type { FC } from "react";
 import type {
   PostgresDataSource,
   SqliteDataSource,
-} from "@/core/models/datasource.ts";
+} from "@/core/models/datasource.model";
 
 interface DataSourceModalProps {
   dataSource: SqliteDataSource | PostgresDataSource;
