@@ -6,16 +6,13 @@ interface BaseLayoutProps {
   children: React.ReactNode;
 }
 
-const BaseLayout: React.FC<BaseLayoutProps> = ({ children }) => {
-  return (
-    <main className={styles.main}>
-      <Header />
-      <section className={styles.main_content}>
-        <SidePanel />
-        {children}
-      </section>
-    </main>
-  );
-};
-
+const BaseLayout: React.FC<BaseLayoutProps> = ({ children }) => (
+  <main className={styles.main}>
+    <Header />
+    <section className={styles.main_content}>
+      <SidePanel />
+      {children}
+    </section>
+  </main>
+);
 export default BaseLayout;

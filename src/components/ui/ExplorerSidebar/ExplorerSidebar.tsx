@@ -13,18 +13,19 @@ const ExplorerSidebar: React.FC<ExplorerSidebarProps> = ({ onTableSelect }) => {
 
   useEffect(() => {
     const fetchTables = async () => {
-      try {
-        setLoading(true);
-        // On appelle la commande Rust 'get_tables' que nous avions créée
-        const result = await invoke<string[]>("get_tables");
-        setTables(result);
-        setError(null);
-      } catch (err: any) {
-        console.error("Erreur de récupération des tables:", err);
-        setError(err.toString());
-      } finally {
-        setLoading(false);
-      }
+      setLoading(true);
+      await invoke<string[]>("get_tables")
+        .then((res) => {
+          setTables(res);
+          setError(null);
+        })
+        .catch((err) => {
+          console.error("Erreur de récupération des tables:", err);
+          setError(err.toString());
+        })
+        .finally(() => {
+          setLoading(false);
+        });
     };
 
     fetchTables();

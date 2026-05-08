@@ -2,10 +2,7 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import { fileURLToPath } from "node:url";
 import path from "path";
-const dirname =
-  typeof __dirname !== "undefined"
-    ? __dirname
-    : path.dirname(fileURLToPath(import.meta.url));
+const dirname = path.dirname(fileURLToPath(import.meta.url));
 
 // @ts-expect-error process is a nodejs global
 const host = process.env.TAURI_DEV_HOST;
@@ -15,9 +12,9 @@ export default defineConfig(async () => ({
   plugins: [react()],
   resolve: {
     alias: {
-      "@": path.resolve(__dirname, "./src"),
-      "@styles": path.resolve(__dirname, "./src/core/styles"),
-      "@core": path.resolve(__dirname, "./src/core"),
+      "@": path.resolve(dirname, "./src"),
+      "@styles": path.resolve(dirname, "./src/core/styles"),
+      "@core": path.resolve(dirname, "./src/core"),
     },
   },
   // Vite options tailored for Tauri development and only applied in `tauri dev` or `tauri build`

@@ -108,12 +108,12 @@ $tooltip-900: #44444401;
 
 // ---------- BREAKPOINTS ----------
 $breakpoints: (
-    xs: 320px,
-    sm: 640px,
-    md: 768px,
-    lg: 1024px,
-    xl: 1280px,
-    xxl: 1536px,
+  xs: 320px,
+  sm: 640px,
+  md: 768px,
+  lg: 1024px,
+  xl: 1280px,
+  xxl: 1536px,
 );
 
 // ---------- TYPOGRAPHIE ----------
@@ -126,50 +126,50 @@ $navbar-height: 68px;
 
 // ---------- ACCESSIBILITÉ ----------
 @mixin sr-only {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border: 0;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
 // ---------- RESPONSIVE MIXINS ----------
 @mixin xs {
-    @media (max-width: 320px) {
-        @content;
-    }
+  @media (max-width: 320px) {
+    @content;
+  }
 }
 
 @mixin sm {
-    @media (max-width: 640px) {
-        @content;
-    }
+  @media (max-width: 640px) {
+    @content;
+  }
 }
 
 @mixin md {
-    @media (max-width: 768px) {
-        @content;
-    }
+  @media (max-width: 768px) {
+    @content;
+  }
 }
 
 @mixin lg {
-    @media (max-width: 1024px) {
-        @content;
-    }
+  @media (max-width: 1024px) {
+    @content;
+  }
 }
 
 @mixin xl {
-    @media (max-width: 1280px) {
-        @content;
-    }
+  @media (max-width: 1280px) {
+    @content;
+  }
 }
 
 @mixin xxl {
-    @media (max-width: 1536px) {
-        @content;
-    }
+  @media (max-width: 1536px) {
+    @content;
+  }
 }
