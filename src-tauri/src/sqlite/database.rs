@@ -16,8 +16,8 @@ impl SqliteDatabase {
 #[async_trait::async_trait]
 impl ADatabase for SqliteDatabase {
     async fn execute(&self, query: &str) -> Result<QueryResult, OxiDbError> {
-        let conn = Connection::open(&self.path).map_err(|e| OxiDbError::from(e))?;
-        let mut stmt = conn.prepare(query).map_err(|e| OxiDbError::from(e))?;
+        let conn = Connection::open(&self.path).map_err(OxiDbError::from)?;
+        let mut stmt = conn.prepare(query).map_err(OxiDbError::from)?;
 
         let col_names: Vec<String> = stmt.column_names().iter().map(|n| n.to_string()).collect();
 
@@ -35,11 +35,11 @@ impl ADatabase for SqliteDatabase {
                 }
                 Ok(res)
             })
-            .map_err(|e| OxiDbError::from(e))?;
+            .map_err(OxiDbError::from)?;
 
         let mut result_rows = Vec::new();
         for row in rows {
-            result_rows.push(row.map_err(|e| OxiDbError::from(e))?);
+            result_rows.push(row.map_err(OxiDbError::from)?);
         }
 
         Ok(QueryResult {

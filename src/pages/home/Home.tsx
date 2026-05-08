@@ -46,7 +46,7 @@ const HomePage: React.FC = () => {
 
       setStatus(`Connecté avec succès !`);
       setTimeout(() => navigate("/editor"), 500);
-    } catch (err: any) {
+    } catch (err) {
       console.error(err);
       setError(`Erreur: ${err}`);
       setStatus("");
@@ -64,7 +64,7 @@ const HomePage: React.FC = () => {
         const fileName = selected.split(/[\\/]/).pop() || "Nouvelle Base";
         await connectToPath(selected, fileName);
       }
-    } catch (err) {
+    } catch (_) {
       setError("Erreur lors de l'ouverture du dialogue.");
     }
   };

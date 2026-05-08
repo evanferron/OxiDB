@@ -24,14 +24,16 @@ const EditorView: React.FC = () => {
     setError("");
     setResult(null);
 
-    try {
-      const res = await invoke<QueryResult>("run_query", { query });
-      setResult(res);
-    } catch (err: any) {
-      setError(err.toString());
-    } finally {
-      setLoading(false);
-    }
+    await invoke<QueryResult>("run_query", { query })
+      .then((res) => {
+        setResult(res);
+      })
+      .catch((err) => {
+        setError(err.toString());
+      })
+      .finally(() => {
+        setLoading(false);
+      });
   };
 
   // Permet d'exécuter la requête avec Cmd+Enter ou Ctrl+Enter

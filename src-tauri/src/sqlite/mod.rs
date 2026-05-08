@@ -5,6 +5,6 @@ use crate::core::error::OxiDbError;
 
 impl From<rusqlite::Error> for OxiDbError {
     fn from(e: rusqlite::Error) -> Self {
-        Self::DatabaseError(e.to_string())
+        Self::Database(e.to_string())
     }
 }

@@ -14,7 +14,7 @@ pub async fn connect_sqlite(
 ) -> Result<String, OxiDbError> {
     let db = SqliteDatabase::new(path);
     state.replace_db(Box::new(db)).await;
-    Ok(format!("Connected to sqlite database"))
+    Ok("Connected to sqlite database".to_string())
 }
 
 #[tauri::command]

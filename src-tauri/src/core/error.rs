@@ -1,13 +1,13 @@
 #[derive(Debug, thiserror::Error)]
 pub enum OxiDbError {
     #[error("Database error: {0}")]
-    DatabaseError(String),
+    Database(String),
 
     #[error("App state error: {0}")]
-    AppStateError(String),
+    AppState(String),
 
     #[error("Serialization error: {0}")]
-    SerializationError(String),
+    Serialization(String),
 }
 
 impl serde::Serialize for OxiDbError {
@@ -16,9 +16,9 @@ impl serde::Serialize for OxiDbError {
         S: serde::Serializer,
     {
         match self {
-            Self::DatabaseError(e) => serializer.serialize_str(e),
-            Self::AppStateError(e) => serializer.serialize_str(e),
-            Self::SerializationError(e) => serializer.serialize_str(e),
+            Self::Database(e) => serializer.serialize_str(e),
+            Self::AppState(e) => serializer.serialize_str(e),
+            Self::Serialization(e) => serializer.serialize_str(e),
         }
     }
 }

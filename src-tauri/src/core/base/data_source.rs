@@ -3,7 +3,7 @@ use serde::{Deserialize, Serialize};
 use uuid::Uuid;
 
 use crate::{
-    core::{base::database::ADatabase, OxiDbError},
+    core::{OxiDbError, base::database::ADatabase},
     postgres::database::PostgresDatabase,
     sqlite::database::SqliteDatabase,
 };
