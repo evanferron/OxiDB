@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import MonacoEditor from "@monaco-editor/react";
 import { invoke } from "@tauri-apps/api/core";
-import Button from "@/components/ui/Button/Button";
+import Button from "@/core/components/ui/Button/Button";
 import styles from "./Editor.module.scss";
-import ExplorerSidebar from "@/components/ui/ExplorerSidebar/ExplorerSidebar";
+import ExplorerSidebar from "@/core/components/ui/ExplorerSidebar/ExplorerSidebar";
 
 // Correspond à la structure de retour de ton backend Rust
 interface QueryResult {

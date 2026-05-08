@@ -2,10 +2,8 @@ use chrono::Utc;
 use uuid::Uuid;
 
 use crate::{
-    core::{DataSource, OxiDbError, base::data_source::DataSourceConfig, config},
-    sqlite::database::SqliteDatabase,
-    state::AppState,
-};
+    core::{DataSource, OxiDbError, base::data_source::DataSourceConfig, config, state::AppState},
+    sqlite::database::SqliteDatabase};
 
 #[tauri::command]
 pub async fn connect_sqlite(

@@ -2,12 +2,11 @@ mod actions;
 mod core;
 mod postgres;
 mod sqlite;
-mod state;
 
 use actions::connection::get_saved_connections;
 use actions::query::{get_tables, run_query};
 use sqlite::actions::{connect_sqlite, save_sqlite_datasource};
-use state::AppState;
+use core::state::AppState;
 use tokio::sync::Mutex;
 
 pub fn run() {

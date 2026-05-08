@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { invoke } from "@tauri-apps/api/core";
 import { open } from "@tauri-apps/plugin-dialog";
 import { useNavigate } from "react-router-dom";
-import Button from "@/components/ui/Button/Button";
+import Button from "@/core/components/ui/Button/Button";
 import styles from "./Home.module.scss";
 import logo from "@/assets/OxiDB.png";
 
@@ -41,7 +41,10 @@ const HomePage: React.FC = () => {
       await invoke("connect_sqlite", { path: filePath });
 
       if (fileName) {
-        await invoke("save_new_connection", { path: filePath, name: fileName });
+        await invoke("save_sqlite_datasource", {
+          path: filePath,
+          name: fileName,
+        });
       }
 
       setStatus(`Connecté avec succès !`);

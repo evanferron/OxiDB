@@ -1,5 +1,5 @@
-import Header from "@/components/layout/Header/Header";
-import SidePanel from "@/components/layout/SidePanel/SidePanel";
+import Header from "@/core/components/layout/Header/Header";
+import SidePanel from "@/core/components/layout/SidePanel/SidePanel";
 import styles from "./BaseLayout.module.scss";
 
 interface BaseLayoutProps {
