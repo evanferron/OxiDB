@@ -12,9 +12,7 @@ pub async fn run_query(
     if let Some(ref db) = *db_lock {
         db.execute(&query).await
     } else {
-        Err(OxiDbError::DatabaseError(
-            "No database connected".to_string(),
-        ))
+        Err(OxiDbError::Database("No database connected".to_string()))
     }
 }
 
@@ -32,13 +30,11 @@ pub async fn get_tables(state: tauri::State<'_, AppState>) -> Result<Vec<String>
         let tables = result
             .rows
             .into_iter()
-            .filter_map(|row| row.get(0).cloned())
+            .filter_map(|row| row.first().cloned())
             .collect();
 
         Ok(tables)
     } else {
-        Err(OxiDbError::DatabaseError(
-            "No database connected".to_string(),
-        ))
+        Err(OxiDbError::Database("No database connected".to_string()))
     }
 }
